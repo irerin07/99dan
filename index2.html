@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>소수 찾기</title>
+</head>
+<body>
+    <h2>List of Prime Numbers</h2>
+    <div id="prime">
+
+    </div>
+
+    <script>
+        var prime = document.getElementById('prime');
+        var numbers = {};
+        numbers.all = [];
+        numbers.prime = [];
+        
+        numbers.addAllNumbers = function(max){
+            for(var i = 2; i <= max; i++){
+                this.all.push(i);
+            }
+        }
+        numbers.calcPrimes = function(){
+            for(var i = 0; i < this.all.length; i++){
+                var n = this.all[i];
+                if(this.isPrime(n)){
+                    this.prime.push(n);
+                }
+            }
+        }
+        numbers.isPrime = function(n){
+            for(var i = 2; i < n; i++){
+                if(n % i === 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+        numbers.printPrime = function(){
+            var res = "";
+            res += "<h3>Total Number of Prime Numbers between 1 - 10000 is " + this.prime.length + "</h3>"
+            for (var i = 0; i < this.prime.length; i++) {
+                res += (i+1) + "번째 소수: " + this.prime[i] + "<br>\n";
+            }
+            return res;
+
+        }
+        numbers.addAllNumbers(10000);
+        numbers.calcPrimes();
+        prime.innerHTML = numbers.printPrime();
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        구구단을 어디까지 진행할까요?<br>
+        <input type="number" id="first">단의<br>
+        <input type="number" id="second">번째 까지<br>
+        <button onclick="calc()">실행</button>
+        <div id = "res">
+            
+        </div>
+
+        <script>
+            function calc(){
+                var first = Number(document.getElementById('first').value);
+                var second = Number(document.getElementById('second').value);
+                var res = document.getElementById('res');
+                res.innerHTML = "";
+                if(first < 2 || first > 9 || second < 1 || second > 9){
+                    alert('입력값을 확인해주세요. 2단 부터 9단까지, 9번째의 구구단까지 계산할 수 있습니다.');
+                }else{
+                    for(var i = 2; i <= first; i++){
+                        if(i !== first){
+                            for(var j = 1; j <=9; j++){
+                                res.innerHTML += i + ' X ' + j + ' = ' + (i * j) + '<br>';
+                            }
+                        }else{
+                            for(var j = 1; j <=second; j++){
+                                res.innerHTML += i + ' X ' + j + ' = ' + (i * j) + '<br>';
+                            }
+                        }
+                    }
+                }
+                
+            }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h2>구구단 <span id = 'n'>n</span>단</h2>
+        <input type="number" id = "num" placeholder="구구단 몇단을 실행할까요?">
+        <button onclick="runMultiple()">Ok</button>
+        <div id = "res">
+
+        </div>
+        <script>
+            // var a = prompt('숫자를 입력하세요');
+            // var b = prompt('숫자를 하나 더 입력해주세요');
+            // var c = Number(a)+Number(b);
+            // var d = Number(a)-Number(b);
+            // var e = Number(a)*Number(b);
+            // var f = Number(a)/Number(b);
+            // alert('입력하신 두 숫자의 합은 ' + c + '입니다');
+            // alert('입력하신 두 숫자의 차은 ' + d + '입니다');
+            // alert('입력하신 두 숫자의 곱은 ' + e + '입니다');
+            // alert('입력하신 두 숫자의 분은 ' + f + '입니다');
+        // var s1 = prompt("키을 입력해 주세요. (cm)");
+        // var s2 = prompt("체중을 입력해 주세요.(Kg)");
+        // var height = Number(s1) / 100;
+        // var weight = Number(s2);
+        // var bmi = weight / (height * height);
+        // document.write("BMI는 "  + bmi +"입니다.");
+
+        //32f = 0c, 212f = 100c
+        // var s1 = prompt("화씨온도를 입력해 주세요.(F)");        
+        // var f = Number(s1);        
+        // var c = (f - 32) * 5 / 9;
+        // document.write("화씨" + f  + "도는 섭씨 "  + c + "도입니다.");
+        // var s1 = prompt('문장을 입력해주세요');
+        // var len = s1.length;
+        // document.write(s1 + " 의 길이는 " + len + " 입니다.");
+
+        // var isPrime = true;
+        // var n = Number(prompt("2 이상의 숫자를 하나 입력해주세요"));
+        // for(let i = 2; i < n; i++){
+        //     if(n % i === 0){
+        //         console.log(isPrime, i);
+        //         isPrime = false;
+        //     }
+        // }
+        // if(isPrime){
+        //     document.write(n + "은 소수입니다.");
+        // }else{
+        //     document.write(n + "은 소수가 아닙니다");
+        // }
+        // var n = Number(prompt('구구단 몇단을 실행할까요?'));
+        // var h = document.getElementById('n');
+        // h.innerText = n
+        // for(let i = 1; i < 10; i++){
+        //     document.writeln(n + '* ' + i  + ' = ' + i * n);
+        //     document.write ("<br>");
+        // }
+        function runMultiple(){
+            var n = document.getElementById('num').value;
+            var res = document.getElementById('res');
+            var num = document.getElementById('n');
+            
+            res.innerHTML = "";
+            if(n < 2 || n > 9){
+                alert("2이상, 9이하의 수를 입력해주세요.");
+            }else{
+                num.innerText = n;
+            for(let i = 1; i < 10; i++){
+                // document.writeln(n + '* ' + i  + ' = ' + i * n);
+                // document.write ("<br>");
+                // res.innerText(n + '* ' + i  + ' = ' + i * n);
+                // res.innerText("<br>");
+                var ans = i * n;
+                res.innerHTML += (n + '*' + i + ' = ' + ans);
+                res.innerHTML += "<br>"
+            }
+        }
+        }
+        </script>
+    </body>
+</html>

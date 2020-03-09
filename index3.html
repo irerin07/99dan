@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>2단부터 9단까지 구구단 출력!</h1>
+        <div id="gugu">
+
+        </div>
+        <script>
+            var results = [];
+            var gugu = document.getElementById('gugu');
+            for(var i = 2; i <= 9; i++){
+                gugu.innerHTML += '<b>구구단 ' + i + ' 단</b>' + '<br>';
+                for(var j = 1; j <= 9; j++){
+                    results[j] = i*j;
+                }
+                for(var k = 1; k <= 9; k++){
+                    gugu.innerHTML += i + ' X ' + k + ' = ' + results[k] + '<br>';
+                }
+
+            }
+            console.log(results);
+        </script>
+    </body>
+</html>

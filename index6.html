@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <input type="text" id="num">
+        <button onclick="num()">확인</button>
+
+        <script>
+            function num() {
+                var num = document.getElementById("num").value;
+                console.log(num);
+                var a = num.split(",");
+                console.log(a);
+                var first = Number(a[0]);
+                var second = Number(a[1]);
+                console.log(first);
+                console.log(second);
+                console.log(first+second)
+            }
+        </script>
+    </body>
+</html>
